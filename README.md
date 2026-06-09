@@ -42,7 +42,9 @@ Seu principal objetivo é educacional, permitindo que estudantes e entusiastas c
 
 ## Kernel
 
-O TempleOS utiliza um **kernel monolítico**, modelo em que os principais serviços do sistema executam diretamente dentro do núcleo do sistema operacional.
+O TempleOS utiliza um kernel monolítico, modelo em que os principais serviços do sistema executam diretamente dentro do núcleo do sistema operacional. Nesse tipo de arquitetura, componentes como gerenciamento de memória, sistema de arquivos, controle de dispositivos e escalonamento de processos funcionam no mesmo espaço de memória do kernel, permitindo uma comunicação mais rápida entre eles e proporcionando maior desempenho. Entretanto, como todos os serviços estão integrados ao núcleo, uma falha em qualquer componente pode comprometer a estabilidade de todo o sistema.
+
+No caso do TempleOS, o kernel foi desenvolvido inteiramente por seu criador, Terry A. Davis, e possui características incomuns quando comparado aos sistemas operacionais modernos. O sistema opera em modo de 64 bits, tem acesso direto ao hardware e foi projetado para ser simples e eficiente, sem recursos como multitarefa preemptiva, controle de usuários ou mecanismos avançados de segurança presentes em sistemas como Linux e Windows.
 
 ### Principais características
 
