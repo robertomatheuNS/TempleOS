@@ -1,0 +1,222 @@
+\documentclass[12pt,oneside,a4paper,chapter=TITLE]{abntex2}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{float}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\theHsection}{\arabic{section}}
+\setcounter{section}{0}
+
+\titulo{TempleOS: Análise de uma Arquitetura de Sistema Operacional de Usuário Único}
+
+\autor{
+Natan Gabriel de Souza Miranda \\
+João Victor Soares de Lima \\
+Kamilly Stephany Saraiva Santos \\
+Samuel Alexandre Correia da Silva \\
+Crytian Pinheiro Aguiar \\
+Roberto Matheus Nunes dos Santos \\
+Paulo Israel Pinho Filho
+}
+
+\instituicao{Centro Universitário Maurício de Nassau - UNINASSAU}
+\local{Maceió - AL}
+\data{2026}
+\tipotrabalho{Relatório Técnico}
+
+\begin{document}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=black,
+    urlcolor=blue
+}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=4cm]{Logo_unina.png}
+\end{figure}
+
+\imprimircapa
+
+\begin{folhaderosto}
+
+\begin{center}
+\includegraphics[width=4cm]{Logo_unina.png}
+\vspace{2cm}
+
+{\ABNTEXchapterfont\Large\imprimirautor}
+
+\vfill
+
+{\ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo}
+
+\vfill
+\end{center}
+
+\hspace*{8cm}
+\begin{minipage}{8cm}
+Trabalho apresentado à disciplina Sistemas Operacionais do curso de Ciência da Computação do Centro Universitário Maurício de Nassau --- UNINASSAU, como requisito parcial para obtenção da nota da AV2.
+
+\vspace{0.5cm}
+Professor(a): Anderlan Henrique
+\end{minipage}
+
+\vfill
+
+\begin{center}
+\imprimirlocal \\
+\imprimirdata
+\end{center}
+
+\end{folhaderosto}
+
+\tableofcontents
+\newpage
+
+\textual
+
+\section{Resumo}
+
+O TempleOS é um sistema operacional experimental desenvolvido por Terry A. Davis entre 2003 e 2018. Ele se destaca por sua simplicidade extrema, arquitetura de usuário único e ausência de rede. Este trabalho analisa suas características técnicas, linguagem própria (HolyC), limitações e execução prática em ambiente virtualizado.
+
+\textbf{Palavras-chave:} TempleOS; Sistemas Operacionais; HolyC; Arquitetura Computacional.
+
+\section{Introdução}
+
+O TempleOS é um sistema operacional experimental projetado com foco em simplicidade extrema e acesso direto ao hardware.
+
+Diferente de sistemas modernos, ele elimina camadas de segurança e abstração, permitindo interação direta com o sistema.
+
+Este trabalho apresenta uma análise técnica do sistema.
+
+\section{Contexto Histórico}
+
+O TempleOS foi desenvolvido por Terry A. Davis ao longo de aproximadamente 15 anos, sendo finalizado por volta de 2013.
+
+Davis foi responsável por todas as partes do sistema, incluindo kernel, interface gráfica e linguagem de programação.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=5cm]{Terry_Davis.jpg}
+\caption{Terry A. Davis, criador do TempleOS}
+\end{figure}
+
+\section{Arquitetura do Sistema}
+
+O TempleOS possui arquitetura de 64 bits, single-user e single-core.
+
+Principais características:
+\begin{itemize}
+    \item Kernel monolítico simples;
+    \item Sem permissões de usuário;
+    \item Execução direta de código;
+    \item Interface gráfica própria;
+    \item Sistema altamente integrado.
+\end{itemize}
+
+\section{Linguagem HolyC}
+
+O sistema utiliza a linguagem HolyC, derivada do C.
+
+Características:
+\begin{itemize}
+    \item Compilação em tempo real;
+    \item Integração com o sistema;
+    \item Programação interativa;
+    \item Acesso direto à memória.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{HOLYC.JPG}
+\caption{Exemplo de código em HolyC no ambiente do TempleOS}
+\end{figure}
+
+\section{Segurança e Limitações}
+
+Limitações do sistema:
+\begin{itemize}
+    \item Sem suporte a rede;
+    \item Sem isolamento de processos;
+    \item Sem autenticação de usuários;
+    \item Sem proteção de memória.
+\end{itemize}
+
+\section{Interface do Sistema}
+
+Interface simples com resolução fixa de 640x480 pixels e 16 cores.
+
+\section{Interface e Elementos Visuais do Sistema}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Menu.jpg}
+\caption{Menu do sistema}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Tela_inicial.jpg}
+\caption{Tela inicial}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Passagem_biblica.jpeg}
+\caption{Passagem bíblica}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Keymap.jpg}
+\caption{Keymap do sistema}
+\end{figure}
+
+\section{Ambiente de Testes e Execução em Máquina Virtual}
+
+O TempleOS foi executado em ambiente virtualizado utilizando Oracle VM VirtualBox.
+
+Observações:
+\begin{itemize}
+    \item Inicialização rápida;
+    \item Interface limitada;
+    \item Forte integração entre sistema e linguagem;
+    \item Ausência de recursos modernos.
+\end{itemize}
+
+\section{Impacto e Relevância}
+
+O TempleOS possui relevância acadêmica por seu design minimalista e abordagem não convencional.
+
+É estudado em arquitetura de sistemas operacionais e design de software.
+
+\section{Conclusão}
+
+O TempleOS demonstra uma abordagem única de sistema operacional, priorizando simplicidade extrema e integração total entre software e hardware.
+
+A análise em máquina virtual reforça suas limitações e características experimentais.
+\begin{thebibliography}{99}
+
+\bibitem{templeos}
+TempleOS Official. Disponível em: https://templeos.org/. Acesso em: 2026.
+
+\bibitem{wiki_templeos}
+WIKIPEDIA. TempleOS. Disponível em: \url{https://en.wikipedia.org/wiki/TempleOS}. Acesso em: 2026.
+
+\bibitem{tanenbaum}
+TANENBAUM, Andrew S.; BOS, Herbert. \textit{Modern Operating Systems}. Pearson, 2015.
+
+\bibitem{ostep}
+ARPACI-DUSSEAU, Remzi; ARPACI-DUSSEAU, Andrea. \textit{Operating Systems: Three Easy Pieces}. 2018.
+
+\end{thebibliography}
+
+\end{document}
