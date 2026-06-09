@@ -59,11 +59,17 @@ No caso do TempleOS, o kernel foi desenvolvido inteiramente por seu criador, Ter
 
 ## Linguagem HolyC
 
-HolyC é a linguagem de programação oficial do TempleOS.
+HolyC é a linguagem de programação oficial do
+TempleOS
+. Ela foi criada por
+Terry A. Davis
+com o objetivo de ser simples, rápida e profundamente integrada ao próprio sistema operacional.
 
-Baseada em C e C++, ela foi criada para integrar-se completamente ao sistema operacional.
+A linguagem possui sintaxe inspirada em C e C++, mas adiciona recursos específicos do TempleOS, como acesso direto ao sistema, compilação imediata e execução interativa. Em vez de separar rigidamente o sistema operacional da linguagem de programação, o TempleOS trata a programação como parte central da experiência do usuário.
 
 Exemplo simples:
+
+O código abaixo representa o tradicional programa "Olá Mundo", utilizado para demonstrar a estrutura básica de um programa em HolyC.
 
 ```c
 U0 Main()
