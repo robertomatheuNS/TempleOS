@@ -46,6 +46,12 @@ O TempleOS utiliza um kernel monolítico, modelo em que os principais serviços 
 
 No caso do TempleOS, o kernel foi desenvolvido inteiramente por seu criador, Terry A. Davis, e possui características incomuns quando comparado aos sistemas operacionais modernos. O sistema opera em modo de 64 bits, tem acesso direto ao hardware e foi projetado para ser simples e eficiente, sem recursos como multitarefa preemptiva, controle de usuários ou mecanismos avançados de segurança presentes em sistemas como Linux e Windows.
 
+### Peculiaridades Arquiteturais
+
+**Execução Exclusiva em Ring 0 (Acesso Total):** Ao contrário dos sistemas operacionais modernos que utilizam a proteção do hardware para separar o espaço do usuário (*Ring 3*) do espaço do kernel (*Ring 0*), o TempleOS executa **todo o código em Ring 0**. Isso significa que aplicações, jogos e o próprio núcleo compartilham o mesmo nível de privilégio. Não há barreiras de segurança; um programa de usuário pode modificar diretamente registradores de controle e instruções protegidas do processador.
+**Ausência de Memória Virtual (Mapeamento Identidade):** O sistema não implementa paginação tradicional para isolamento de processos ou criação de memória virtual. Em vez disso, utiliza o conceito de *Mapeamento Identidade* (Identity Mapping), onde o endereço de memória lógica visto pelo código corresponde exatamente ao endereço físico real na memória RAM. Essa abordagem elimina o overhead de tradução de endereços (TLB misses), tornando o acesso à memória extremamente rápido, porém remove qualquer proteção contra corrupção de memória por ponteiros inválidos.
+**Multitarefa Cooperativa:** O escalonamento de processos no TempleOS não é preemptivo (onde o timer do hardware interrompe uma tarefa à força para dar lugar a outra). Ele opera de forma cooperativa, o que significa que uma tarefa retém o controle do núcleo da CPU até que decida voluntariamente ceder o tempo de processamento (através de chamadas como `Yield()`). Como consequência direta dessa arquitetura, se um processo entrar em loop infinito em um núcleo, esse núcleo específico ficará completamente travado.
+
 ### Principais características
 
 - Arquitetura monolítica
