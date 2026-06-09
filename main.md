@@ -231,6 +231,20 @@ Entre as atividades executadas destacam-se:
 
 - Exploração dos menus e demos do sistema.
 
+## Comandos Básicos do TempleOS
+
+O TempleOS possui atalhos de teclado que auxiliam na navegação e na
+execução de ações rápidas. Alguns exemplos básicos observados no uso são:
+
+- `F1` – abre a ajuda integrada do sistema.
+- `SHIFT+F7` – exibe uma passagem bíblica ou abre a Bíblia do TempleOS.
+- `ESC` – fecha janelas ou retorna ao menu anterior.
+- `F7` – acessa demos e exemplos de código em muitos casos.
+- `CTRL+S` – salva arquivos ou textos enquanto estiver editando.
+
+Esses comandos complementam a interface simples do TempleOS e são úteis
+para explorar o sistema de forma mais ágil.
+
 A interface do TempleOS é direta e voltada à prática, o que facilita a
 realização de experimentos sem a sobrecarga de opções avançadas
 presentes em outros sistemas.

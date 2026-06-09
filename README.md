@@ -107,6 +107,18 @@ Durante os testes foram explorados diversos recursos do sistema:
 * Execução de programas HolyC;
 * Exploração dos menus e demos do sistema.
 
+## Comandos e Atalhos Básicos
+
+O TempleOS possui diversos atalhos de teclado que ajudam na navegação e na execução rápida de tarefas. Alguns exemplos básicos são:
+
+* `F1` – abre o sistema de ajuda do TempleOS.
+* `SHIFT+F7` – exibe uma passagem bíblica ou chama a Bíblia integrada ao sistema.
+* `ESC` – volta ao menu ou fecha janelas abertas.
+* `F7` – abre menus de demonstração, exemplos ou edições de código dependendo do contexto.
+* `CTRL+S` – geralmente salva o arquivo ou o documento em edição.
+
+Esses atalhos fazem parte da interface simples e direta do TempleOS e podem ser úteis durante a exploração do sistema.
+
 ---
 
 ## Tecnologias Utilizadas
