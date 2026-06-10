@@ -41,7 +41,7 @@ Paulo Israel Pinho Filho
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=4cm]{Logo_unina.png}
+\includegraphics[width=4cm]{Imagens/Logo_unina.png}
 \end{figure}
 
 \imprimircapa
@@ -49,7 +49,7 @@ Paulo Israel Pinho Filho
 \begin{folhaderosto}
 
 \begin{center}
-\includegraphics[width=4cm]{Logo_unina.png}
+\includegraphics[width=4cm]{Imagens/Logo_unina.png}
 \vspace{2cm}
 
 {\ABNTEXchapterfont\Large\imprimirautor}
@@ -109,7 +109,7 @@ Davis foi responsável por todas as partes do sistema, incluindo kernel, interfa
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=5cm]{Terry_Davis.jpg}
+\includegraphics[width=5cm]{Imagens/Terry_Davis.jpg}
 \caption{Terry A. Davis, criador do TempleOS}
 \end{figure}
 
@@ -126,6 +126,19 @@ Principais características:
     \item Sistema altamente integrado.
 \end{itemize}
 
+\section{Sistema de Arquivos do TempleOS}
+
+O TempleOS utiliza um sistema de arquivos próprio, projetado para ser simples e fortemente integrado ao kernel. A implementação prioriza facilidade de acesso e manipulação direta pelo usuário e pela linguagem integrada (HolyC), em detrimento de funcionalidades avançadas encontradas em sistemas modernos.
+
+Principais características:
+\begin{itemize}
+    \item Volume único gerenciado pelo kernel, com estrutura hierárquica de diretórios;
+    \item Operações básicas suportadas: criar, ler, escrever, renomear e remover arquivos e diretórios;
+    \item Metadados essenciais mantidos (tamanho e carimbos de data/hora) sem gerenciamento complexo de permissões;
+    \item Ausência de journaling, controle de acesso granular (ACLs) e criptografia — reflexo da filosofia de simplicidade do projeto;
+    \item Acesso programático via HolyC: a linguagem integrada disponibiliza chamadas para manipulação direta de arquivos, permitindo editar e executar código a partir do próprio sistema.
+\end{itemize}
+
 \section{Linguagem HolyC}
 
 O sistema utiliza a linguagem HolyC, derivada do C.
@@ -140,7 +153,7 @@ Características:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{HOLYC.JPG}
+\includegraphics[width=0.9\textwidth]{Imagens/HOLYC.JPG}
 \caption{Exemplo de código em HolyC no ambiente do TempleOS}
 \end{figure}
 
@@ -162,25 +175,25 @@ Interface simples com resolução fixa de 640x480 pixels e 16 cores.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{Menu.jpg}
+\includegraphics[width=0.9\textwidth]{Imagens/Menu.jpg}
 \caption{Menu do sistema}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{Tela_inicial.jpg}
+\includegraphics[width=0.9\textwidth]{Imagens/Tela_inicial.jpg}
 \caption{Tela inicial}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{Passagem_biblica.jpeg}
+\includegraphics[width=0.9\textwidth]{Imagens/Passagem_biblica.jpeg}
 \caption{Passagem bíblica}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{Keymap.jpg}
+\includegraphics[width=0.9\textwidth]{Imagens/Keymap.jpg}
 \caption{Keymap do sistema}
 \end{figure}
 
