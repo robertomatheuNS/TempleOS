@@ -46,6 +46,12 @@ O TempleOS utiliza um kernel monolítico, modelo em que os principais serviços 
 
 No caso do TempleOS, o kernel foi desenvolvido inteiramente por seu criador, Terry A. Davis, e possui características incomuns quando comparado aos sistemas operacionais modernos. O sistema opera em modo de 64 bits, tem acesso direto ao hardware e foi projetado para ser simples e eficiente, sem recursos como multitarefa preemptiva, controle de usuários ou mecanismos avançados de segurança presentes em sistemas como Linux e Windows.
 
+### Peculiaridades Arquiteturais (Limitações por Design)
+
+- Execução Exclusiva em Ring 0: O sistema roda todo o código (kernel, aplicações e jogos) com o mesmo nível de privilégio do processador. Não há separação entre espaço de usuário e núcleo, permitindo acesso total e direto ao hardware.
+- Mapeamento Identidade (Sem Memória Virtual): Não utiliza paginação ou memória virtual. O endereço lógico é o próprio endereço físico da RAM. Isso elimina o overhead de tradução de endereços, tornando o sistema extremamente rápido, mas sem proteção contra corrupção de memória.
+- Multitarefa Cooperativa: O escalonamento não é preemptivo. Os processos precisam ceder o tempo de CPU voluntariamente. Caso uma tarefa entre em loop infinito, o núcleo do processador onde ela está rodando trava completamente.
+
 ### Principais características
 
 - Arquitetura monolítica
