@@ -117,6 +117,16 @@ Davis foi responsável por todas as partes do sistema, incluindo kernel, interfa
 
 O TempleOS possui arquitetura de 64 bits, single-user e single-core.
 
+
+Peculiaridades Arquiteturais (Limitações por Design): 
+
+- Execução Exclusiva em Ring 0: Ao contrário dos sistemas operacionais modernos que utilizam a proteção do hardware para separar o espaço do usuário (*Ring 3*) do espaço do kernel (Ring 0), o
+ TempleOS executa todo o código em Ring 0. Isso significa que aplicações, jogos e o próprio núcleo compartilham o mesmo nível de privilégio. Não há barreiras de segurança: qualquer programa pode modificar diretamente registradores de controle e instruções protegidas do processador.
+
+ - Ausência de Memória Virtual (Mapeamento Identidade): O sistema não implementa paginação tradicional para isolamento de processos ou criação de memória virtual. Em vez disso, utiliza o Mapeamento Identidade (Identity Mapping), onde o endereço de memória lógica visto pelo código corresponde exatamente ao endereço físico real na memória RAM. Essa abordagem elimina o gasto de processamento com a tradução de endereços (TLB), tornando o acesso à memória extremamente rápido, porém remove qualquer proteção contra corrupção de memória por ponteiros inválidos.
+
+ - Multitarefa Cooperativa: O escalonamento de processos no TempleOS não é preemptivo (onde o timer do hardware interrompe uma tarefa à força para dar lugar a outra). Ele opera de forma cooperativa, o que significa que uma tarefa retém o controle do núcleo da CPU até que decida voluntariamente ceder seu tempo de processamento. Como consequência direta, se um processo entrar em loop infinito em um núcleo, esse núcleo específico ficará completamente travado até o reinício do sistema.
+
 Principais características:
 \begin{itemize}
     \item Kernel monolítico simples;
